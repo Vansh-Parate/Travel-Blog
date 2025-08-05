@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import e1Image from '../assets/e-1.jpg';
+import s1Image from '../assets/s-1.jpg';
+import t1Image from '../assets/t-1.avif';
 
 export default function BlogCard() {
   return (
@@ -9,19 +12,19 @@ export default function BlogCard() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Travel Stories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card
-              image="src/assets/e-1.jpg"
+              image={e1Image}
               title="Affordable places in Europe"
               desc="Europe's hidden gems: Big experiences, small prices."
               date="April 12, 2024"
             />
             <Card
-              image="src/assets/s-1.jpg"
+              image={s1Image}
               title="Exploring street food of India"
               desc="Embark on a culinary journey through the vibrant street markets of Southeast Asia."
               date="June 28, 2024"
             />
             <Card
-              image="src/assets/t-1.avif"
+              image={t1Image}
               title="Craft Your Perfect Journey"
               desc="Learn how to make a travel plan."
               date="September 15, 2024"

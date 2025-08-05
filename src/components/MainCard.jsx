@@ -1,4 +1,5 @@
 import React from 'react'
+import mainImage from '../assets/main.jpg'
     
 const MainCard = () => {
   return (
@@ -6,7 +7,7 @@ const MainCard = () => {
         <div className='mb-12'>
             <div className='rounded-lg  bg-card text-card-foreground shadow-sm overflow-hidden px-5'>
                 <div className='relative sm:h-[300px] md:h-[520px] px-4'>
-                    <img src="src/assets/main.jpg" className='object-cover md:h-full w-full sm:h-full rounded-xl overflow-auto'></img>
+                    <img src={mainImage} className='object-cover md:h-full w-full sm:h-full rounded-xl overflow-auto'></img>
                   <div className="absolute bottom-12 left-5 inset-0 flex items-end">
                        <div className='p-4 sm:p-6 text-blue-100'>
                           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Exploring Kashmir</h2>
