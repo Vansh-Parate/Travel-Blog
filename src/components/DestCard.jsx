@@ -1,37 +1,31 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import m1Image from '../assets/m-1.jpeg'
-import b1Image from '../assets/b-1.jpg'
-import p1Image from '../assets/p-1.jpg'
-import i1Image from '../assets/i-1.jpg'
-import z1Image from '../assets/z-1.jpg'
-import h1Image from '../assets/h-1.jpg'
 
 const DestCard = () => {
   return (
     <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-6 px-[10rem] py-[4rem]">
       <Card
-      image={m1Image}
+      image="/images/m-1.jpeg"
       title="MANALI"
       />
       <Card
-      image={b1Image}
+      image="/images/b-1.jpg"
       title="BALI"
       />
       <Card
-      image={p1Image}
+      image="/images/p-1.jpg"
       title="PARIS"
       />
       <Card
-      image={i1Image}
+      image="/images/i-1.jpg"
       title="ICELAND"
       />
       <Card 
-      image={z1Image}
+      image="/images/z-1.jpg"
       title="ZURICH"
       />
       <Card
-      image={h1Image}
+      image="/images/h-1.jpg"
       title="HAWAII"
       />
     </div>

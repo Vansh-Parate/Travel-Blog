@@ -1,9 +1,6 @@
 import React from 'react';
 import { MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import z1Image from '../assets/z-1.jpg';
-import h1Image from '../assets/h-1.jpg';
-import p1Image from '../assets/p-1.jpg';
 
 export default function Featured() {
   return (
@@ -12,17 +9,17 @@ export default function Featured() {
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Featured Destinations</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <FeaturedCard
-            image={z1Image}
+            image="/images/z-1.jpg"
             title="Zurich, Switzerland"
             description="Lakeside charm, Alpine views in Swiss paradise."
           />
           <FeaturedCard
-            image={h1Image}
+            image="/images/h-1.jpg"
             title="Hawaii, USA"
             description="Relax on pristine beaches and explore lush landscapes."
           />
           <FeaturedCard
-            image={p1Image}
+            image="/images/p-1.jpg"
             title="Paris, France"
             description="Experience the city of love and its iconic landmarks."
           />

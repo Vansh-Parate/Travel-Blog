@@ -4,15 +4,6 @@ import { Carousel } from 'react-responsive-carousel' // added carousel library f
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import LatestPosts from '../components/Latest-posts'
 import Footer from '../components/Footer'
-import z1Avif from '../assets/z-1.avif'
-import z1Jpg from '../assets/z-1.jpg'
-import z3Avif from '../assets/z-3.avif'
-import p1Jpg from '../assets/p-1.jpg'
-import p3Avif from '../assets/p-3.avif'
-import p2Avif from '../assets/p-2.avif'
-import h1Jpg from '../assets/h-1.jpg'
-import h2Avif from '../assets/h-2.avif'
-import h3Avif from '../assets/h-3.avif'
 
 
 export default function BlogDetails() {
@@ -21,9 +12,9 @@ export default function BlogDetails() {
   const blogData = {
     "Zurich, Switzerland": {
       images: [
-        z1Avif,
-        z1Jpg,
-        z3Avif
+        "/images/z-1.avif",
+        "/images/z-1.jpg",
+        "/images/z-3.avif"
       ],
       description: "Zurich is the largest city in Switzerland, offering the perfect blend of urban life and scenic Alpine views.",
       thingsToDo: [
@@ -60,9 +51,9 @@ export default function BlogDetails() {
   
     "Paris, France": {
       images: [
-        p1Jpg,
-        p3Avif,
-        p2Avif
+        "/images/p-1.jpg",
+        "/images/p-3.avif",
+        "/images/p-2.avif"
       ],
       description: "Paris, the capital city of France, is known for its rich history, iconic landmarks, art, and cuisine. The 'City of Light' is a cultural and romantic hub.",
       thingsToDo: [
@@ -93,9 +84,9 @@ export default function BlogDetails() {
   
     "Hawaii, USA": {
       images: [
-        h1Jpg,
-        h2Avif,
-        h3Avif
+        "/images/h-1.jpg",
+        "/images/h-2.avif",
+        "/images/h-3.avif"
       ],
       description: "Hawaii, an archipelago in the Pacific Ocean, is famous for its stunning beaches, lush landscapes, and unique blend of cultures. It’s a paradise for nature lovers and adventurers alike.",
       thingsToDo: [
