@@ -6,12 +6,12 @@ import Footer from '../components/Footer';
 function Destination() {
     return (
         <>
-        <div className="container mx-auto px-4 py-6">
-            <h2 className="flex justify-center items-center text-2xl font-serif font-thin ">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-serif font-light text-center mb-6 sm:mb-8">
                 BROWSE BY POPULAR DESTINATIONS
             </h2>
             <DestCard />
-            <h2 className="flex justify-center items-center text-2xl font-serif font-thin ">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-serif font-light text-center mb-6 sm:mb-8 mt-12 sm:mt-16">
                 BROWSE BY COUNTRIES
             </h2>
             <CountryGrid />

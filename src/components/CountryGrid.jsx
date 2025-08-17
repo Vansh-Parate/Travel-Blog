@@ -56,14 +56,20 @@ const regions = [
 
 export default function Component() {
   return (
-    <div className="bg-gray-100 min-h-screen p-8 m-[50px]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+    <div className="bg-gray-100 min-h-screen p-4 sm:p-6 lg:p-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {regions.map((region) => (
-          <div key={region.name} className="relative border-0 border-r-2 border-b-2 p-4 pb-[30px]">
-            <h2 className="text-3xl font-light text-gray-400 mb-8 ">{region.name}</h2>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2 pb-[40px]">
+          <div key={region.name} className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-600 mb-4 sm:mb-6">{region.name}</h2>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-2">
               {region.countries.map((country) => (
-                <Link key={country} className="text-sm text-gray-600">{country}</Link>
+                <Link 
+                  key={country} 
+                  className="text-xs sm:text-sm text-gray-600 hover:text-blue-600 transition-colors duration-200 py-1"
+                  to="#"
+                >
+                  {country}
+                </Link>
               ))}
             </div>
           </div>

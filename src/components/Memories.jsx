@@ -79,31 +79,31 @@ const VisitedLocations = () => {
   const totalLandmarks = locations.reduce((sum, loc) => sum + loc.memories.landmarks, 0);
 
   const StatBadge = ({ icon: Icon, count, label }) => (
-    <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className="flex items-center gap-2 bg-white rounded-full px-3 sm:px-4 py-2 shadow-sm hover:shadow-md transition-shadow duration-300">
       <Icon className="w-4 h-4 text-blue-500" />
-      <span className="font-medium">{count}</span>
-      <span className="text-gray-600 text-sm">{label}</span>
+      <span className="font-medium text-sm sm:text-base">{count}</span>
+      <span className="text-gray-600 text-xs sm:text-sm">{label}</span>
     </div>
   );
 
   return (
-    <div className="max-w-3xl mx-auto p-4">
+    <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
       {/* Header with animated counter */}
-      <div className="mb-8 text-center">
-        <h1 className="text-2xl font-bold mb-2">
+      <div className="mb-6 sm:mb-8 text-center">
+        <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2">
           Travel Memories
         </h1>
-        <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-6">
-          <Globe className="w-5 h-5 text-blue-500 animate-pulse" />
-          <span className="font-semibold text-blue-700">
+        <div className="inline-flex items-center gap-2 bg-blue-50 px-3 sm:px-4 py-2 rounded-full mb-4 sm:mb-6">
+          <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 animate-pulse" />
+          <span className="font-semibold text-blue-700 text-sm sm:text-base">
             {locations.length} {locations.length === 1 ? 'Destination' : 'Destinations'} Explored
           </span>
         </div>
 
         {/* Travel Stats Timeline */}
-        <div className="bg-gray-50 rounded-xl p-6 mb-8">
-          <h2 className="text-lg font-semibold mb-4">Travel Story in Numbers</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="bg-gray-50 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8">
+          <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Travel Story in Numbers</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
             <StatBadge icon={Camera} count={totalPhotos} label="Photos" />
             <StatBadge icon={Coffee} count={totalCoffeeShops} label="Cafés" />
             <StatBadge icon={Sunrise} count={totalSunrises} label="Sunrises" />

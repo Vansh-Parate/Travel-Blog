@@ -115,38 +115,38 @@ const TravelChecklist = () => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="min-h-screen bg-gradient-to-br py-10">
-      <div className="max-w-4xl mx-auto px-6">
+    <div className="min-h-screen bg-gradient-to-br py-6 sm:py-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Title */}
-        <h1 className="text-4xl font-bold text-center text-teal-900 mb-10">Travel Checklist</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-teal-900 mb-6 sm:mb-10">Travel Checklist</h1>
         
         {/* Intro */}
-        <div className="text-center text-gray-700 mb-8">
-          <p className="mb-4">
+        <div className="text-center text-gray-700 mb-6 sm:mb-8">
+          <p className="mb-4 text-sm sm:text-base">
             Planning a trip? Use this travel checklist to ensure you have all your essentials packed and ready! Customize your list as per your destination and needs.
           </p>
           <button 
             onClick={resetChecklist} 
-            className="px-4 py-2 bg-teal-500 text-white rounded-lg shadow-md hover:bg-teal-600 transition">
+            className="px-3 sm:px-4 py-2 bg-teal-500 text-white rounded-lg shadow-md hover:bg-teal-600 transition text-sm sm:text-base">
             Reset Checklist
           </button>
         </div>
 
         {/* Checklist Container */}
-        <div id='checklist-container' className={`checklist-container ${isVisible ? 'visible' : ''} space-y-8`}>
+        <div id='checklist-container' className={`checklist-container ${isVisible ? 'visible' : ''} space-y-6 sm:space-y-8`}>
           {Object.entries(checklist).map(([category, items]) => (
-            <div key={category} className="bg-white shadow-lg rounded-lg p-6">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">{category}</h2>
-              <ul className="space-y-4">
+            <div key={category} className="bg-white shadow-lg rounded-lg p-4 sm:p-6">
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3 sm:mb-4">{category}</h2>
+              <ul className="space-y-3 sm:space-y-4">
                 {items.map((item, index) => (
                   <li key={index} className="flex items-center space-x-3">
                     <input 
                       type="checkbox" 
                       checked={item.checked} 
                       onChange={() => toggleItem(category, item.name)}
-                      className="w-5 h-5 text-teal-600 bg-gray-100 rounded focus:ring-0" 
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-teal-600 bg-gray-100 rounded focus:ring-0" 
                     />
-                    <span className="text-gray-700 text-lg">{item.name}</span>
+                    <span className="text-gray-700 text-sm sm:text-base lg:text-lg">{item.name}</span>
                   </li>
                 ))}
               </ul>
@@ -155,15 +155,15 @@ const TravelChecklist = () => {
         </div>
 
         {/* Download/Print Options */}
-        <div className="text-center mt-10">
+        <div className="text-center mt-8 sm:mt-10 space-y-3 sm:space-y-0 sm:space-x-4">
           <button 
           onClick={downloadPDF}
-            className="px-6 py-2 bg-blue-500 text-white rounded-lg shadow-md mr-4 hover:bg-blue-600 transition">
+            className="px-4 sm:px-6 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition text-sm sm:text-base">
             Download PDF
           </button>
           <button 
           onClick={printChecklist}
-            className="px-6 py-2 bg-gray-500 text-white rounded-lg shadow-md hover:bg-gray-600 transition">
+            className="px-4 sm:px-6 py-2 bg-gray-500 text-white rounded-lg shadow-md hover:bg-gray-600 transition text-sm sm:text-base">
             Print Checklist
           </button>
         </div>

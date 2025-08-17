@@ -1,6 +1,6 @@
 import React ,{useState} from 'react';
 import {Link}  from 'react-router-dom';
-import {Compass , MenuIcon} from 'lucide-react'
+import {Compass , MenuIcon, X} from 'lucide-react'
 
 function Navbar() {
     const[menuOpen,setMenuOpen] = useState(false);
@@ -17,32 +17,40 @@ function Navbar() {
     ]
     
     return (
-        <header>
-        <div className="container mx-auto flex justify-between items-center px-4 py-6">
-        <div className="px-[4rem] flex text-3xl items-center font-bold space-x-3">
-        <Compass className="h-8 w-8" />
-        <span>TravelBlog</span>
+        <header className="relative z-50">
+        <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+        <div className="flex items-center space-x-2 sm:space-x-3">
+        <Compass className="h-6 w-6 sm:h-8 sm:w-8" />
+        <span className="text-xl sm:text-2xl lg:text-3xl font-bold">TravelBlog</span>
         </div>
-        <ul className="nav-links hidden md:flex items-center space-x-10 px-[5rem]">
+        <ul className="hidden md:flex items-center space-x-6 lg:space-x-10">
             {
-                navItems.map(({path,link})=><li>
-                    <Link to={path} className='text-xl font-semibold transition duration-300 ease-in-out hover:text-purple-600'>{link}</Link>
+                navItems.map(({path,link})=><li key={path}>
+                    <Link to={path} className='text-base lg:text-xl font-semibold transition duration-300 ease-in-out hover:text-purple-600'>{link}</Link>
                     </li>)
             }
         </ul>
         <div className='md:hidden'>
-            <button onClick={toggleButton} className='cursor-pointer'>
+            <button onClick={toggleButton} className='cursor-pointer p-2'>
                 {
-                    menuOpen ? <MenuIcon className='w-5 h-5'/> : <MenuIcon className='w-5h-5' />
+                    menuOpen ? <X className='w-6 h-6'/> : <MenuIcon className='w-6 h-6' />
                 }
             </button>
         </div>
     </div>
-    <div className='md:hidden h-[8rem]'>
-        <ul className={`md:hidden text-lg gap-12 block space-y-4 px-4 py-6 mt-16 bg-lavender ${menuOpen ? "fixed top-0 left-0 w-full transition-all ease-out z-10" : "hidden"}`}>
+    
+    {/* Mobile Menu */}
+    <div className={`md:hidden ${menuOpen ? 'block' : 'hidden'} absolute top-full left-0 w-full bg-white shadow-lg border-t`}>
+        <ul className="py-4 px-4 space-y-4">
         {
-                navItems.map(({path,link})=><li>
-                    <Link to={path} className='text-xl font-semibold transition duration-300 ease-in-out hover:text-purple-600'>{link}</Link>
+                navItems.map(({path,link})=><li key={path}>
+                    <Link 
+                        to={path} 
+                        className='block text-lg font-semibold transition duration-300 ease-in-out hover:text-purple-600 py-2'
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        {link}
+                    </Link>
                     </li>)
             }
         </ul>

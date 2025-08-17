@@ -25,9 +25,9 @@ const faqData = {
 // Main FAQ page component
 const FAQPage = () => {
   return (
-    <div className="min-h-screen bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-from-blue-100 py-10">
-      <div className="max-w-4xl mx-auto px-6">
-        <h1 className="text-4xl font-bold text-center text-blue-900 mb-10">Frequently Asked Questions</h1>
+    <div className="min-h-screen bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-from-blue-100 py-6 sm:py-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-blue-900 mb-6 sm:mb-10">Frequently Asked Questions</h1>
         {Object.keys(faqData).map((category) => (
           <FAQSection key={category} category={category} faqs={faqData[category]} />
         ))}
@@ -39,8 +39,8 @@ const FAQPage = () => {
 // Category section component
 const FAQSection = ({ category, faqs }) => {
   return (
-    <div className="mb-8">
-      <h2 className="text-2xl font-semibold text-blue-800 mb-4">{category}</h2>
+    <div className="mb-6 sm:mb-8">
+      <h2 className="text-xl sm:text-2xl font-semibold text-blue-800 mb-3 sm:mb-4">{category}</h2>
       {faqs.map((faq, index) => (
         <FAQItem key={index} question={faq.question} answer={faq.answer} />
       ))}
@@ -53,13 +53,13 @@ const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 mb-4">
+    <div className="bg-white shadow-md rounded-lg p-3 sm:p-4 mb-3 sm:mb-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-left w-full text-blue-900 font-semibold focus:outline-none"
+        className="text-left w-full text-blue-900 font-semibold focus:outline-none text-sm sm:text-base"
       >
         {question}
-        <span className="float-right">{isOpen ? '-' : '+'}</span>
+        <span className="float-right text-lg sm:text-xl">{isOpen ? '-' : '+'}</span>
       </button>
 
       {/* Animate presence to handle the opening and closing of FAQ items */}
@@ -77,7 +77,7 @@ const FAQItem = ({ question, answer }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.15 }}
-              className="text-gray-700 mt-2"
+              className="text-gray-700 mt-2 text-sm sm:text-base"
             >
               {answer}
             </motion.p>

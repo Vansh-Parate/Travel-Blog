@@ -8,7 +8,7 @@ import VisitedLocations from '../components/Memories';
 
 function Home() {
     return (
-        <div className="w-screen">
+        <div className="w-full">
            <MainCard />
            <Featured />
            <BlogCard />
